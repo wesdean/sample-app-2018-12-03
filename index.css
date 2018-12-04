@@ -12,6 +12,9 @@ h2 {
   color: #333333;
   margin-bottom: 6px; }
 
+.github {
+  font-size: 2rem; }
+
 .drop-zone {
   display: flex;
   flex-direction: row;
