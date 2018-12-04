@@ -1,0 +1,62 @@
+.note-pad {
+  padding: 12px;
+  font-size: 2rem;
+
+  button {
+    color: #333333;
+    background-color: #eeeeee;
+  }
+
+  .form-group {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-bottom: 6px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  .form-control {
+    font-size: 1.25rem;
+  }
+}
+
+.note-pad__menu {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-bottom: 6px;
+
+  button {
+    font-size: 1.5rem;
+  }
+}
+
+.note-pad__workspace {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+.note-pad__list {
+  margin-right: 12px;
+
+  .note-item {
+    cursor: pointer;
+  }
+}
+
+.note-pad__note {
+  border-left: 2px #666666 inset;
+  padding-left: 4px;
+
+
+
+  button {
+    font-size: 1.75rem;
+    width: 100%;
+    margin-top: 6px;
+  }
+}

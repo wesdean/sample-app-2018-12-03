@@ -1,0 +1,19 @@
+html {
+  font-size: 10px;
+}
+
+h1 {
+  font-size: 3rem;
+}
+h2 {
+  font-size: 2rem;
+}
+
+.app-notes {
+  font-size: 1.5rem;
+  color: #333333;
+  margin-bottom: 6px;
+}
+
+@import "scss/image_previewer";
+@import "scss/note_pad";

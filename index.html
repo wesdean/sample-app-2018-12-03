@@ -1,0 +1,89 @@
+<html lang="en">
+<head>
+  <title>Sample App 2018-12-03</title>
+  <link rel="stylesheet" href="index.css">
+</head>
+<body>
+
+<!-- Image Previewer -->
+
+<div class="app-notes">
+  Preview images your browser. Drag and drop a file from your computer into the DROP ZONE.
+  Only image files will load, others will be ignored. You can preview multiple images at the same time.<br/>
+  Click an image to remove it from the DROP ZONE.
+</div>
+<h1>Image Previewer</h1>
+<div id="dropZone" class="drop-zone">
+  <div class="drop-zone-message">
+    DROP ZONE
+    <br/>
+    Drop image here to preview
+  </div>
+  <div id="innerDropZone" class="drop-zone__inner"></div>
+</div>
+
+<div id="addByUrl" class="add-by-url">
+  <form id="addByUrlForm">
+    <h2>Preview an image by URL</h2>
+    <div class="app-notes">
+      Alternatively, you can enter a URL from the internet and preview the image in the DROP ZONE.
+      Non-image or bad URLs will display as broken images.
+    </div>
+    <label for="addByUrlText">Image URL:</label>
+    <input id="addByUrlText"/>
+    <button>Add</button>
+  </form>
+</div>
+
+<!-- End Image Previewer -->
+
+<br/><br/>
+
+<!-- Note Pad -->
+
+<h1>Note Pad</h1>
+<div class="app-notes">
+  This is a simple note taking app loaded with some demo notes.
+  Add, edit, and delete notes. When you are done you can export the notes to JSON and do with them what you will.
+  To import saved notes, paste the JSON into the import box then click the "Import Notes" button.
+  Viola! Your notes are loaded.
+</div>
+<div id="notePad" class="note-pad">
+  <div class="note-pad__menu">
+    <button id="newNote">New Note</button>
+  </div>
+  <div class="note-pad__workspace">
+    <div id="noteList" class="note-pad__list"></div>
+    <div class="note-pad__note">
+      <form id="noteForm">
+        <div class="form-group">
+          <label>ID: <span id="noteId"/></label>
+        </div>
+        <div class="form-group">
+          <label for="noteTitle">Title:</label>
+          <input id="noteTitle" class="form-control" placeholder="Note Title"/>
+        </div>
+        <div class="form-group">
+          <label for="noteText">Text:</label>
+          <textarea id="noteText" class="form-control" placeholder="Note Text"></textarea>
+        </div>
+        <button>Save</button>
+        <button id="deleteNote">Delete</button>
+      </form>
+    </div>
+  </div>
+  <div id="notePersistence" class="note-persistence">
+    <button id="noteExport">Export Notes</button>
+    <button id="noteImport">Import Notes</button>
+    <div class="form-group">
+      <textarea id="notePersistenceText" class="form-control" placeholder="Serialized notes go here"></textarea>
+    </div>
+  </div>
+</div>
+
+<!-- End Note Pad -->
+
+<script src="js/image_previewer.js"></script>
+<script src="js/note_pad.js"></script>
+</body>
+</html>

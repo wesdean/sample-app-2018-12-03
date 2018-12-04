@@ -1,0 +1,45 @@
+.drop-zone {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  min-width: 400px;
+  min-height: 200px;
+  font-size: 3rem;
+  color: #999999;
+  border: 3px #666666 double;
+  padding: 3px;
+
+  .drop-zone-message {
+    text-align: center;
+  }
+
+  &.drag-over {
+    border-color: darkorange;
+  }
+
+  &.has-image {
+    .drop-zone-message {
+      display: none;
+    }
+  }
+
+  .drop-zone-image {
+    display: inline-block;
+    margin: 3px;
+    cursor: pointer;
+
+    img {
+      max-width: 200px;
+    }
+  }
+}
+
+.drop-zone__inner {
+  display: block;
+  text-align: center;
+}
+
+.add-by-url {
+  font-size: 1.5rem;
+}

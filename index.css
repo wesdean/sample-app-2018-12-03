@@ -1,0 +1,88 @@
+html {
+  font-size: 10px; }
+
+h1 {
+  font-size: 3rem; }
+
+h2 {
+  font-size: 2rem; }
+
+.app-notes {
+  font-size: 1.5rem;
+  color: #333333;
+  margin-bottom: 6px; }
+
+.drop-zone {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  min-width: 400px;
+  min-height: 200px;
+  font-size: 3rem;
+  color: #999999;
+  border: 3px #666666 double;
+  padding: 3px; }
+  .drop-zone .drop-zone-message {
+    text-align: center; }
+  .drop-zone.drag-over {
+    border-color: darkorange; }
+  .drop-zone.has-image .drop-zone-message {
+    display: none; }
+  .drop-zone .drop-zone-image {
+    display: inline-block;
+    margin: 3px;
+    cursor: pointer; }
+    .drop-zone .drop-zone-image img {
+      max-width: 200px; }
+
+.drop-zone__inner {
+  display: block;
+  text-align: center; }
+
+.add-by-url {
+  font-size: 1.5rem; }
+
+.note-pad {
+  padding: 12px;
+  font-size: 2rem; }
+  .note-pad button {
+    color: #333333;
+    background-color: #eeeeee; }
+  .note-pad .form-group {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-bottom: 6px; }
+    .note-pad .form-group:last-child {
+      margin-bottom: 0; }
+  .note-pad .form-control {
+    font-size: 1.25rem; }
+
+.note-pad__menu {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-bottom: 6px; }
+  .note-pad__menu button {
+    font-size: 1.5rem; }
+
+.note-pad__workspace {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start; }
+
+.note-pad__list {
+  margin-right: 12px; }
+  .note-pad__list .note-item {
+    cursor: pointer; }
+
+.note-pad__note {
+  border-left: 2px #666666 inset;
+  padding-left: 4px; }
+  .note-pad__note button {
+    font-size: 1.75rem;
+    width: 100%;
+    margin-top: 6px; }
+
+/*# sourceMappingURL=index.css.map */
