@@ -45,18 +45,30 @@
 
   .note-item {
     cursor: pointer;
+    padding: 3px;
   }
 }
 
 .note-pad__note {
-  border-left: 2px #666666 inset;
+  border-left: 4px #666666 inset;
   padding-left: 4px;
-
 
 
   button {
     font-size: 1.75rem;
     width: 100%;
     margin-top: 6px;
+  }
+}
+
+.note-pad__color-selector {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .color-item {
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
   }
 }

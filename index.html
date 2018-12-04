@@ -54,7 +54,7 @@
   </div>
   <div class="note-pad__workspace">
     <div id="noteList" class="note-pad__list"></div>
-    <div class="note-pad__note">
+    <div id="noteContainer" class="note-pad__note">
       <form id="noteForm">
         <div class="form-group">
           <label>ID: <span id="noteId"/></label>
@@ -67,6 +67,7 @@
           <label for="noteText">Text:</label>
           <textarea id="noteText" class="form-control" placeholder="Note Text"></textarea>
         </div>
+        <div id="noteColorSelector" class="note-pad__color-selector"></div>
         <button>Save</button>
         <button id="deleteNote">Delete</button>
       </form>

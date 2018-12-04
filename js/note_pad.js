@@ -9,23 +9,34 @@
   const noteExport = document.getElementById("noteExport");
   const noteImport = document.getElementById("noteImport");
   const notePersistenceText = document.getElementById("notePersistenceText");
+  const colorSelector = document.getElementById("noteColorSelector");
+  const noteContainer = document.getElementById("noteContainer");
+
+  const colorList = {
+    color1: "#ee232a",
+    color2: "#ff12de",
+    color3: "#694023",
+  };
+
+  const noteDefaultBorderColor = "#666666";
 
   // This is the notes array. It's where your notes are kept.
   let notes = [
     {
       id: 0,
       title: "Note 1",
-      text: "This is a note!"
+      text: "This is a note!",
     },
     {
       id: 1,
       title: "Note 2",
-      text: "You guessed it! Another note!"
+      text: "You guessed it! Another note!",
+      color: "#ffaa22",
     },
     {
       id: 2,
       title: "Not a Note",
-      text: "Sorry to disappoint. This is just another note."
+      text: "Sorry to disappoint. This is just another note.",
     }
   ];
 
@@ -92,6 +103,9 @@
       deleteNoteBtn.disabled = false;
     }
 
+    let borderColor = note.color;
+    setNoteContainerBorderColor(borderColor);
+
     noteId.innerText = note.id;
     noteTitle.value = note.title;
     noteText.value = note.text;
@@ -102,6 +116,7 @@
     let id = parseInt(noteId.innerText);
     let title = noteTitle.value;
     let text = noteText.value;
+    let color = noteContainer.style.borderColor;
 
     if (!title) {
       alert("Missing note title");
@@ -112,6 +127,7 @@
       id: id,
       title: title,
       text: text,
+      color: color,
     };
 
     let index = getNoteIndexById(id);
@@ -184,6 +200,10 @@
     div.innerHTML = note.title;
     div.dataset.noteId = note.id;
 
+    if (note.color) {
+      div.style.border = `4px ${note.color} solid`;
+    }
+
     div.addEventListener("click", event => {
       event.preventDefault();
       event.stopPropagation();
@@ -230,6 +250,37 @@
     return pass;
   }
 
+  function buildColorSelector() {
+    colorSelector.innerHTML = "";
+
+    let keys = Object.keys(colorList);
+    for (let i = 0; i < keys.length; i++) {
+      let k = keys[i];
+      let v = colorList[k];
+      if (colorList.hasOwnProperty(k)) {
+        let div = document.createElement("div");
+        div.dataset.color = v;
+        div.classList.add("color-item");
+        div.style.backgroundColor = v;
+
+        div.addEventListener("click", event => {
+          event.preventDefault();
+          setNoteContainerBorderColor(div.dataset.color);
+        }, false);
+
+        colorSelector.appendChild(div);
+      }
+    }
+  }
+
+  function setNoteContainerBorderColor(borderColor) {
+    if (!borderColor) {
+      borderColor = noteDefaultBorderColor;
+    }
+    noteContainer.style.borderColor = borderColor;
+  }
+
+  buildColorSelector();
   loadNoteList();
   loadNote();
 })();
